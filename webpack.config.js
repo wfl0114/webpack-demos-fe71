@@ -81,6 +81,16 @@ module.exports = {
   },
 
   /**
+   * 模块路径打包规则配置
+   */
+  resolve: {
+    /**
+     * 配置可以省略的文件模块后缀名
+     */
+    extensions: ['.js', '.vue', '.css', '.json']
+  },
+
+  /**
    * 模块相关配置
    */
   module: {
