@@ -54,6 +54,12 @@ module.exports = {
   mode: 'development',
 
   /**
+   * 配置 Source Map  源代码地图导航，方便调试
+   * inline-source-map 将源码映射内容生成到结果文件中
+   */
+  devtool: 'cheap-module-eval-source-map',
+
+  /**
    * 模块相关配置
    */
   module: {
