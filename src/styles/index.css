@@ -1,3 +1,7 @@
-body {
+/* body {
   background-color: hotpink;
+} */
+
+body {
+  background-image: url('../img/00.jpg');
 }

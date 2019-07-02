@@ -51,7 +51,20 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      }
+      },
+
+      /**
+       * 当匹配到以 /\.(png|jpg|gif)$/ 结尾的文件的使用，use 使用 file-loader 加载处理
+       */
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
     ]
   }
 }
