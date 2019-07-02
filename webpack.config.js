@@ -9,12 +9,13 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   /**
    * 打包的入口
    */
-  entry: './src/index.js',
+  entry: './src/main.js',
 
   plugins: [
     /**
@@ -35,7 +36,10 @@ module.exports = {
       }
     }),
 
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    // 请确保引入这个插件！
+    new VueLoaderPlugin()
   ],
 
   /**
@@ -146,6 +150,14 @@ module.exports = {
             cacheDirectory: true // 开启缓存
           }
         }
+      },
+
+      /**
+       * 当匹配到以 .vue 结尾的资源的时候，使用 vue-loader 处理
+       */
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   }
