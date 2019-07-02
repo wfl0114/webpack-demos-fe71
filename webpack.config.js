@@ -108,6 +108,20 @@ module.exports = {
           'css-loader', // 2. 将 css 转为 JavaScript 模块
           'less-loader' // 1. 将 less 转为 css，less-loader 依赖了 less
         ]
+      },
+
+      /**
+       * 当匹配到以 .js 资源的时候使用 babel-loader 将 JavaScript 中的 es6 代码转为 es5
+       */
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/, // 排除第三方包
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'] // 转换规则
+          }
+        }
       }
     ]
   }
