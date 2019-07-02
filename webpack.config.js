@@ -96,6 +96,18 @@ module.exports = {
         use: [
           'file-loader'
         ]
+      },
+
+      /**
+       * 当匹配到以 .less 结尾的资源的时候，分别使用下面的 loader 去处理
+       */
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader', // 3. 生成 style 节点插入 DOM
+          'css-loader', // 2. 将 css 转为 JavaScript 模块
+          'less-loader' // 1. 将 less 转为 css，less-loader 依赖了 less
+        ]
       }
     ]
   }
