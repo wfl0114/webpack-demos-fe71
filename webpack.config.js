@@ -7,6 +7,7 @@
  */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   /**
@@ -15,6 +16,11 @@ module.exports = {
   entry: './src/index.js',
 
   plugins: [
+    /**
+     * 打包之前先清除 dist 目录
+     */
+    new CleanWebpackPlugin(),
+    
     /**
      * 使用 html-webpack-plugin 打包 html 文件
      * 打包到哪里？它会将文件打包到 output.path 中，文件名不变
@@ -73,7 +79,7 @@ module.exports = {
        * 当匹配到以 /\.(png|jpg|gif)$/ 结尾的文件的使用，use 使用 file-loader 加载处理
        */
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|jpeg)$/,
         use: [
           {
             loader: 'file-loader',
