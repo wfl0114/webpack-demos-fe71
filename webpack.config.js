@@ -20,7 +20,7 @@ module.exports = {
      * 打包之前先清除 dist 目录
      */
     new CleanWebpackPlugin(),
-    
+
     /**
      * 使用 html-webpack-plugin 打包 html 文件
      * 打包到哪里？它会将文件打包到 output.path 中，文件名不变
@@ -87,6 +87,16 @@ module.exports = {
           },
         ],
       },
+
+      /**
+       * 当匹配到以 /\.(woff|woff2|eot|ttf|otf)$/ 结尾的资源文件的时候，use 使用 file-loader 处理
+       */
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ]
   }
 }
