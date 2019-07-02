@@ -1,7 +1,3 @@
-// import foo from './foo'
-
-// foo()
-
-const foo = require('./foo')
+import foo from './foo'
 
 foo()

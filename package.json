@@ -4,14 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "npm install",
-    "build": "webpack",
-    "a": "node src/a.js",
-    "b": "node src/b.js",
-    "c": "node src/c.js",
-    "preall": "echo 任务开始了",
-    "all": "npm run a & npm run b & npm run c",
-    "postall": "echo 任务结束了"
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
