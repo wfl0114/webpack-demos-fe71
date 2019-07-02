@@ -3,11 +3,16 @@
 </template>
 
 <script>
-export default {
+import util from '@/utils'
 
+export default {
+  created () {
+    util()
+  }
 }
 </script>
 
 <style>
 
 </style>
+cls
