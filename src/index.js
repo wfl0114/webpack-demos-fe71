@@ -1,3 +1,4 @@
+import "@babel/polyfill"
 import foo from './foo'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/index.css'
@@ -17,3 +18,7 @@ const todos = [
 todos.forEach(item => {
   console.log(item)
 })
+
+const list = ['a', 'b']
+
+console.log(list.includes('a'))

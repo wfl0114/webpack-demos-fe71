@@ -24,6 +24,7 @@
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "bootstrap": "^3.3.7",
     "vue": "^2.6.10"
   }
