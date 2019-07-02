@@ -21,5 +21,13 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'main.js'
-  }
+  },
+
+  /**
+   * mode 打包模式，如果没有指定，默认使用 production 模式打包
+   * development 开发模式打包，打包速度快，不会优化打包结果
+   * production  生产模式打包，打包速度慢，会优化打包结果
+   * 建议：开发使用 development，发布上线使用 production
+   */
+  mode: 'development'
 }
