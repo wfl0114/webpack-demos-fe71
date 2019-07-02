@@ -8,6 +8,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   /**
@@ -32,7 +33,9 @@ module.exports = {
         removeComments: true, // 删除注释
         collapseWhitespace: true // 去除回车换行空格
       }
-    })
+    }),
+
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   /**
@@ -70,6 +73,7 @@ module.exports = {
     contentBase: './dist',
     open: false, // 是否自动打开浏览器访问网站地址
     port: 8080, // 占用的端口号
+    hot: true
   },
 
   /**
