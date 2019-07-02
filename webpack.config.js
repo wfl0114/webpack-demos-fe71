@@ -29,5 +29,29 @@ module.exports = {
    * production  生产模式打包，打包速度慢，会优化打包结果
    * 建议：开发使用 development，发布上线使用 production
    */
-  mode: 'development'
+  mode: 'development',
+
+  /**
+   * 模块相关配置
+   */
+  module: {
+    /**
+     * 对不同的资源配置使用不同的 loader 加载器
+     */
+    rules: [
+      /**
+       * 当 test 匹配到以 .css 结尾的文件资源的时候 use css-loader 和 style-loader 处理
+       * 首先它使用 css-loader 将 css 转为 JavaScript 模块，模块存储的就是 css 文件字符串
+       * 然后使用 style-loader 生成一段代码：在运行期间，生成 style 节点，插入页面的 head 中
+       * 注意：老外的思维的都是反的，后面的是先执行的，不要把 loader 的顺序配置错了
+       */
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  }
 }
