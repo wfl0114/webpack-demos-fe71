@@ -8,7 +8,7 @@ foo()
 
 const a = 123
 
-// console.log(a)
+console.log(a)
 
 const todos = [
   '吃饭',

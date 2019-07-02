@@ -60,6 +60,19 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
 
   /**
+   * webpack-dev-server 配置项
+   * 这个工具会启动一个 web 服务，并自动打包构建，它会将 contentBase 设置为 Web 服务的根目录
+   * webpack-dev-server 为了提高打包效率，将打包的结果存储在内存中
+   * 所以我们只是在开发的过程中使用 webpack-dev-server
+   * 发布上线（生产）打包直接 npm run build 生成物理文件
+   */
+  devServer: {
+    contentBase: './dist',
+    open: false, // 是否自动打开浏览器访问网站地址
+    port: 8080, // 占用的端口号
+  },
+
+  /**
    * 模块相关配置
    */
   module: {
