@@ -6,12 +6,28 @@
  * 注意：该文件基于 Node 运行，所以可以编写 Node 代码
  */
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   /**
    * 打包的入口
    */
   entry: './src/index.js',
+
+  plugins: [
+    /**
+     * 使用 html-webpack-plugin 打包 html 文件
+     * 打包到哪里？它会将文件打包到 output.path 中，文件名不变
+     * 并且自动引入打包的结果 JavaScript 文件
+     */
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      minify: {
+        removeComments: true, // 删除注释
+        collapseWhitespace: true // 去除回车换行空格
+      }
+    })
+  ],
 
   /**
    * 打包的出口
